@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ezuri Music — Afro/Progressive House with an 80s Soul</title>
+    <meta name="description" content="Ezuri Music is a new DJ concept by Steven: Afro/Progressive House infused with neon-soaked 80s energy. Listen to snippets, explore the concept, and get in touch.">
+    <meta name="theme-color" content="#0b0c10">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Monoton&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="video-bg">
+      <video id="bg-video" autoplay loop muted playsinline poster="assets/images/poster.jpg">
+        <source src="assets/video/17486489-sd_960_540_30fps.mp4" type="video/mp4">
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+
+    <header class="site-header">
+      <nav class="nav">
+        <a href="#hero" class="brand" aria-label="Ezuri Music Home">
+          <span class="logo">Ezuri</span>
+          <span class="logo-sub">Music</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="#concept">Concept</a></li>
+          <li><a href="#listen">Listen</a></li>
+          <li><a href="#top3">Top 3</a></li>
+          <li><a href="#connect" class="btn btn-primary">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" class="hero">
+        <h1 class="title">
+          <span class="title-main">Ezuri Music</span>
+          <span class="title-glow"></span>
+        </h1>
+        <p class="tagline">Afro / Progressive House with an 80s soul</p>
+        <div class="hero-cta">
+          <a href="#listen" class="btn btn-primary">Listen</a>
+          <a href="#connect" class="btn btn-ghost">Book / Contact</a>
+        </div>
+      </section>
+
+      <section id="concept" class="section section-glass">
+        <div class="container">
+          <h2 class="section-title">The Concept</h2>
+          <p class="lead">
+            Ezuri Music is Steven’s new DJ concept: deep, percussive <strong>Afro</strong> and hypnotic <strong>Progressive House</strong>, electrified by the neon glow of the <strong>80s</strong> — think Miami Vice aesthetics, Stranger Things ambience, and sonic nods to <em>Journey</em> and <em>Depeche Mode</em>.
+          </p>
+          <p>
+            Expect driving rhythms, emotional synth hooks, and a cinematic atmosphere that builds from twilight to midnight. It’s nostalgia reimagined for modern dancefloors — retro spirit, future energy.
+          </p>
+        </div>
+      </section>
+
+      <section id="listen" class="section">
+        <div class="container">
+          <h2 class="section-title">Listen — Short Snippets</h2>
+          <div class="snippets-grid">
+            <article class="snippet-card">
+              <div class="snippet-art" aria-hidden="true"></div>
+              <div class="snippet-meta">
+                <h3 class="snippet-title">Neon Drifts</h3>
+                <p class="snippet-desc">Retro pads, Afro groove — preview 0:20</p>
+              </div>
+              <audio class="audio-snippet" controls preload="none" data-preview-seconds="20">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+              </audio>
+            </article>
+            <article class="snippet-card">
+              <div class="snippet-art" aria-hidden="true"></div>
+              <div class="snippet-meta">
+                <h3 class="snippet-title">Analog Sunrise</h3>
+                <p class="snippet-desc">Progressive lift with 80s shimmer — preview 0:20</p>
+              </div>
+              <audio class="audio-snippet" controls preload="none" data-preview-seconds="20">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+              </audio>
+            </article>
+            <article class="snippet-card">
+              <div class="snippet-art" aria-hidden="true"></div>
+              <div class="snippet-meta">
+                <h3 class="snippet-title">Night Drive</h3>
+                <p class="snippet-desc">Percussive Afro pulse meets synth nostalgia — preview 0:20</p>
+              </div>
+              <audio class="audio-snippet" controls preload="none" data-preview-seconds="20">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
+              </audio>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="top3" class="section section-glass">
+        <div class="container">
+          <h2 class="section-title">Top 3 — New Releases in the Ezuri Vibe</h2>
+          <ul id="top3-list" class="top3-list" aria-live="polite"></ul>
+          <p class="note">Updated regularly — not Ezuri originals, but records that inspire the sound.</p>
+        </div>
+      </section>
+
+      <section id="connect" class="section">
+        <div class="container connect">
+          <div class="connect-card">
+            <h2 class="section-title">Connect</h2>
+            <p>Bookings, collabs, or ideas — reach out anytime.</p>
+            <form id="contact-form" class="contact-form" action="https://formspree.io/f/your-id" method="POST">
+              <div class="form-row">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required>
+              </div>
+              <div class="form-row">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required>
+              </div>
+              <div class="form-row">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Tell us about your event"></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit">Send</button>
+              <p class="form-note">No backend required — replace the form action with your Formspree ID or email service.</p>
+            </form>
+          </div>
+
+          <div class="connect-card">
+            <h3 class="subheading">Follow</h3>
+            <ul class="socials">
+              <li><a id="social-instagram" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+              <li><a id="social-soundcloud" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-soundcloud"></i> SoundCloud</a></li>
+              <li><a id="social-youtube" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+              <li><a id="social-mixcloud" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-mixcloud"></i> Mixcloud</a></li>
+              <li><a id="social-tiktok" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© <span id="year"></span> Ezuri Music • All rights reserved</small>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+

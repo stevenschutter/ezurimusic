@@ -1,0 +1,16 @@
+{
+  "contactEndpoint": "https://formspree.io/f/your-id",
+  "socials": {
+    "instagram": "https://instagram.com/ezuri.music",
+    "soundcloud": "https://soundcloud.com/ezurimusic",
+    "youtube": "https://youtube.com/@ezurimusic",
+    "mixcloud": "https://mixcloud.com/ezurimusic",
+    "tiktok": "https://tiktok.com/@ezuri.music"
+  },
+  "top3": [
+    { "title": "Anyma & Rebūke — Syren", "label": "Afterlife", "url": "https://open.spotify.com/track/xyz" },
+    { "title": "Keinemusik — Paris", "label": "KM", "url": "https://open.spotify.com/track/xyz" },
+    { "title": "Samuel Deep — Daywun (Remix)", "label": "Lack of Guidance", "url": "https://open.spotify.com/track/xyz" }
+  ]
+}
+
