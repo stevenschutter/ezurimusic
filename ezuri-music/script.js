@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Top 3 list — editable configuration
-  const top3 = [
+  // Top 3 list — default configuration (can be overridden by config.json)
+  let top3 = [
     {
       title: 'Artbat & AnotherLife — In Your Arms',
       label: 'UPPERGROUND',
@@ -56,8 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
-  const list = document.getElementById('top3-list');
-  if (list) {
+  function renderTop3() {
+    const list = document.getElementById('top3-list');
+    if (!list) return;
+    list.innerHTML = '';
     top3.slice(0, 3).forEach((item, idx) => {
       const li = document.createElement('li');
       li.innerHTML = `
@@ -71,25 +73,54 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Social links — edit here
-  const socials = {
+  // Social links — defaults (can be overridden by config.json)
+  let socials = {
     instagram: 'https://instagram.com/',
     soundcloud: 'https://soundcloud.com/',
     youtube: 'https://youtube.com/@',
     mixcloud: 'https://mixcloud.com/',
     tiktok: 'https://tiktok.com/@'
   };
-  const socialMap = [
-    ['social-instagram', 'instagram'],
-    ['social-soundcloud', 'soundcloud'],
-    ['social-youtube', 'youtube'],
-    ['social-mixcloud', 'mixcloud'],
-    ['social-tiktok', 'tiktok']
-  ];
-  socialMap.forEach(([id, key]) => {
-    const el = document.getElementById(id);
-    if (el && socials[key]) el.setAttribute('href', socials[key]);
-  });
+  function applySocials() {
+    const socialMap = [
+      ['social-instagram', 'instagram'],
+      ['social-soundcloud', 'soundcloud'],
+      ['social-youtube', 'youtube'],
+      ['social-mixcloud', 'mixcloud'],
+      ['social-tiktok', 'tiktok']
+    ];
+    socialMap.forEach(([id, key]) => {
+      const el = document.getElementById(id);
+      if (el && socials[key]) el.setAttribute('href', socials[key]);
+    });
+  }
+
+  function updateContactForm(endpoint) {
+    if (!endpoint) return;
+    const form = document.getElementById('contact-form');
+    if (form) form.setAttribute('action', endpoint);
+  }
+
+  // Load optional config.json to override defaults
+  fetch('config.json', { cache: 'no-store' })
+    .then((res) => {
+      if (!res.ok) throw new Error('No config');
+      return res.json();
+    })
+    .then((cfg) => {
+      if (Array.isArray(cfg.top3)) top3 = cfg.top3;
+      if (cfg.socials && typeof cfg.socials === 'object') socials = { ...socials, ...cfg.socials };
+      if (cfg.contactEndpoint) updateContactForm(cfg.contactEndpoint);
+    })
+    .catch(() => {})
+    .finally(() => {
+      renderTop3();
+      applySocials();
+    });
+
+  // Initial render with defaults in case config.json is missing
+  renderTop3();
+  applySocials();
 
   // Background video fallback control
   const bgVideo = document.getElementById('bg-video');
